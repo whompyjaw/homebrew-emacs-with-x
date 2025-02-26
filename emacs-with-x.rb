@@ -34,8 +34,8 @@ class EmacsWithX < Formula
 
   on_linux do
     depends_on "jpeg-turbo"
-    defends_on "gtk+3"
-    defends_on "imagemagick"
+    depends_on "gtk+3"
+    depends_on "imagemagick"
   end
 
   def install
