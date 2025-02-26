@@ -1,4 +1,4 @@
-class Emacs < Formula
+class EmacsWithX < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
   url "https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.xz"
@@ -34,6 +34,8 @@ class Emacs < Formula
 
   on_linux do
     depends_on "jpeg-turbo"
+    defends_on "gtk+3"
+    defends_on "imagemagick"
   end
 
   def install
@@ -50,7 +52,7 @@ class Emacs < Formula
       --prefix=#{prefix}
       --with-gnutls
       --with-x
-      --with-x-toolkit=lucid
+      --with-x-toolkit=gtk
       --with-imagemagick
       --with-xml2
       --without-dbus
